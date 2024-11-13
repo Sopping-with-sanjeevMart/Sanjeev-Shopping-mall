@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        .container {
+            background-color: #d7d9dbb0;
+            border-radius: 10px;
+            width: 600px;
+            margin-bottom: 10px;
+        }
+        .im {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-4 p-5">
+    <img class="im" src="image/image.png" alt="img">
+    <h2 class="text-center">Buy Now With SanjeevMart</h2>
+  
+    <form id="orderForm" onsubmit="return confirmOrder();">
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="mobile">Mobile:</label>
+            <input type="number" class="form-control" id="mobile" name="mobile" required maxlength="10" pattern="^\d{10}$" title="Please enter a 10-digit mobile number" oninput="this.value = this.value.slice(0, 10)">
+        </div>
+        <div class="form-group">
+            <label for="address">Delivery Address:</label>
+            <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input type="number" class="form-control" id="quantity" max="5" name="quantity" min="1" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" >Confirm Order</button>
+    </form>
+</div>
+
+<script>
+    function confirmOrder() {
+        // Here you can add any form validation logic if needed
+
+        // Optionally, you can store the form data in localStorage or sessionStorage
+        // localStorage.setItem('orderData', JSON.stringify({
+        //     name: document.getElementById('name').value,
+        //     email: document.getElementById('email').value,
+        //     mobile: document.getElementById('mobile').value,
+        //     address: document.getElementById('address').value,
+        //     quantity: document.getElementById('quantity').value,
+        // }));
+
+        // Redirect to checkout.html
+        window.location.href = 'checkout.html';
+        return false; // Prevent the form from submitting in the traditional way
+    }
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
